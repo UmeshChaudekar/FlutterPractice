@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_demo/modals/cataloge.dart';
 import 'package:flutter_demo/widget/drawer.dart';
+import 'package:flutter_demo/widget/theme.dart';
 
 class GridPage extends StatefulWidget {
   @override
@@ -42,8 +43,8 @@ class _GridPageState extends State<GridPage> {
             ? GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 4,
                 ),
                 itemBuilder: (context, index) {
                   final item = CatalogueModal.items[index];
@@ -52,21 +53,81 @@ class _GridPageState extends State<GridPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: GridTile(
-                        header: Container(
-                          child: Text(
-                            item.name,
-                            style: TextStyle(color: Colors.white),
+                        // header: Container(
+                        //   child: Text(
+                        //     item.name,
+                        //     style: TextStyle(color: Colors.white),
+                        //   ),
+                        //   padding: const EdgeInsets.all(12),
+                        //   decoration: BoxDecoration(color: Colors.deepPurple),
+                        // ),
+                        // child: Image.network(item.image),
+                        // footer: Container(
+                        //   child: Text(
+                        //     item.price.toString(),
+                        //     style: TextStyle(color: Colors.white),
+                        //   ),
+                        //   decoration: BoxDecoration(color: Colors.amber),
+                        // ),
+
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration:
+                              BoxDecoration(color: MyTheme.appBackground),
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Image.network(
+                                    item.image,
+                                    width: 100,
+                                    height: 100,
+                                  )
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    item.name,
+                                    maxLines: 2,
+                                    softWrap: true,
+                                    textAlign: TextAlign.left,
+                                    overflow: TextOverflow.fade,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text(
+                                    "\$${item.price.toString()}",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "Buy",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(color: Colors.deepPurple),
-                        ),
-                        child: Image.network(item.image),
-                        footer: Container(
-                          child: Text(
-                            item.price.toString(),
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          decoration: BoxDecoration(color: Colors.amber),
                         ),
                       ));
                 },
