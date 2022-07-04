@@ -14,9 +14,8 @@ class _MyDrawerState extends State<MyDrawer> {
 
   @override
   void initState() {
-    super.initState();
-
     initSharedPref();
+    super.initState();
   }
 
   void initSharedPref() async {

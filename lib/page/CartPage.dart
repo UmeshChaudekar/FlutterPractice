@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/store.dart';
 import 'package:flutter_demo/modals/CartModal.dart';
+import 'package:flutter_demo/page/OrderProcessPage.dart';
+import 'package:flutter_demo/utils/routes.dart';
 import 'package:flutter_demo/widget/theme.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
@@ -48,8 +50,9 @@ class _CartTotal extends StatelessWidget {
           30.widthBox,
           ElevatedButton(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: "Buying not supported yet".text.make()));
+                    // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    //     content: "Buying not supported yet".text.make()));
+                    Navigator.pushNamed(context, MyRoutes.orderProcessRoute);
                   },
                   style: ButtonStyle(
                       backgroundColor:

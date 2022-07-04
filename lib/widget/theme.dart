@@ -35,8 +35,8 @@ class MyTheme {
           toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
           titleTextStyle: Theme.of(context).textTheme.headline6));
 
-  static Color appBackground = Color.fromARGB(255, 255, 248, 236);
-  static Color darkAppBackground = Color.fromARGB(255, 255, 248, 236);
+  static Color appBackground = Color.fromARGB(248, 248, 248, 248);
+  static Color darkAppBackground = Color.fromARGB(248, 248, 248, 248);
   static Color darkishBlueColor = Color.fromARGB(255, 27, 29, 90);
   static Color lightBlueColor = Color.fromARGB(255, 27, 29, 90);
 }

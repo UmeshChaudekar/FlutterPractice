@@ -6,6 +6,7 @@ import 'package:flutter_demo/page/CartPage.dart';
 import 'package:flutter_demo/page/GridPage.dart';
 import 'package:flutter_demo/page/HomePage.dart';
 import 'package:flutter_demo/page/LoginPage.dart';
+import 'package:flutter_demo/page/OrderProcessPage.dart';
 import 'package:flutter_demo/page/SplashSreen.dart';
 import 'package:flutter_demo/utils/routes.dart';
 import 'package:flutter_demo/widget/theme.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.gridRoute: (context) => GridPage(),
         MyRoutes.cartRoute: ((context) => CartPage()),
+        MyRoutes.orderProcessRoute: ((context) => OrderProcessPage()),
         // MyRoutes.productDetailsRoute: (context) => ProductDetailsPage(),
       },
     );
