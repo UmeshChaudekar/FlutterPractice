@@ -71,6 +71,14 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {
+              Navigator.pushNamed(context, MyRoutes.googleMapRoute);
+            },
+            leading: Icon(CupertinoIcons.map, color: Colors.black),
+            title: Text("Google Map Example",
+                textScaleFactor: 1.2, style: TextStyle(color: Colors.black)),
+          ),
+          ListTile(
+            onTap: () {
               loginDataPref.remove('UserName');
               loginDataPref.remove('Password');
               loginDataPref.remove('login');

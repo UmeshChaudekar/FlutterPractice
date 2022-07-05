@@ -8,6 +8,7 @@ import 'package:flutter_demo/page/HomePage.dart';
 import 'package:flutter_demo/page/LoginPage.dart';
 import 'package:flutter_demo/page/OrderProcessPage.dart';
 import 'package:flutter_demo/page/SplashSreen.dart';
+import 'package:flutter_demo/page/map/GoogleMap.dart';
 import 'package:flutter_demo/utils/routes.dart';
 import 'package:flutter_demo/widget/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.gridRoute: (context) => GridPage(),
         MyRoutes.cartRoute: ((context) => CartPage()),
         MyRoutes.orderProcessRoute: ((context) => OrderProcessPage()),
+        MyRoutes.googleMapRoute: ((context) => GoogleMapPage()),
         // MyRoutes.productDetailsRoute: (context) => ProductDetailsPage(),
       },
     );

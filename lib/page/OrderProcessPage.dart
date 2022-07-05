@@ -88,17 +88,20 @@ class _OrderProcessPageState extends State<OrderProcessPage> {
                 controlsBuilder: (currentStep, Step,
                         {VoidCallback? onStepContinue,
                         VoidCallback? onStepCancel}) =>
-                    Row(),
+                    SizedBox(
+                  height: 20.0,
+                  width: 20.0,
+                ),
 
                 steps: <Step>[
                   Step(
+                    title: stepDesign("order_placed.png", "Order Placed",
+                        "We have received your order."),
+                    content: Row(),
                     isActive: _currentStep >= 0,
                     state: _currentStep >= 0
                         ? StepState.complete
                         : StepState.disabled,
-                    title: stepDesign("order_placed.png", "Order Placed",
-                        "We have received your order."),
-                    content: Row(),
                   ),
                   Step(
                     title: stepDesign("order_confirmed.png", "Order Confirmed",
